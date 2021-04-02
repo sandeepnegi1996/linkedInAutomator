@@ -50,7 +50,9 @@ public class TestCaseLinkedInAutomtatedLikes extends TestBase {
 		
 		homepage.navigateToMessagePage();
 
-		homepage.sendMessageToConnection();
+	//	homepage.sendMessageToConnection();
+		
+		homepage.printAllConnectionName();
 
 		Thread.sleep(3000);
 

@@ -3,6 +3,7 @@ package com.workon.pages.actions;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
@@ -28,8 +29,7 @@ public class LinkedInHomePage extends Page {
 	}
 
 	public void clickOnLikeButton() throws InterruptedException {
-		
-		
+
 		List<WebElement> likeButtonList = locator.likeButtonList;
 		for (WebElement element : likeButtonList) {
 			click(element);
@@ -51,7 +51,6 @@ public class LinkedInHomePage extends Page {
 
 	public void clickOnConnectButtonOneByOne() throws InterruptedException {
 
-		
 		List<WebElement> connectButtonList = locator.connectButtonList;
 
 		for (WebElement element : connectButtonList) {
@@ -61,38 +60,71 @@ public class LinkedInHomePage extends Page {
 		}
 
 	}
-	
+
 	public void navigateToConnectPage() {
 		driver.navigate().to("https://www.linkedin.com/mynetwork/");
 	}
-	
-	
+
 	public void navigateToMessagePage() throws InterruptedException {
 		driver.navigate().to("https://www.linkedin.com/mynetwork/invite-connect/connections/");
 		Thread.sleep(3000);
 	}
-	
+
 	public void sendMessageToConnection() throws InterruptedException {
-		
-		List<WebElement> listMessage= locator.messageElementList;
-		
-		for(WebElement message:listMessage) {
-			
+
+		List<WebElement> listMessage = locator.messageElementList;
+
+		for (WebElement message : listMessage) {
+
 			click(message);
-			
+
 			Thread.sleep(3000);
-			
-			type(locator.messageTypeArea,"Hi,\r\n" + 
-					"\r\n" + 
-					"I am an aspiring Test Automation engineer who came across a role in your firm and am interested in applying. Would you be open to sharing my profile with the hiring team so they know about my interest in this role? Happy to chat more if you have the time. Looking forward to hearing from you.\r\n" + 
-					"\r\n" + 
-					"https://drive.google.com/file/d/10j1c1S_kmyOoezH0ruZY0hWjfGzl0uO3/view?usp=sharing\r\n" + 
-					"\r\n" + 
-					"— Sandeep");
-			
+
+			type(locator.messageTypeArea, "Hi");
+			locator.messageTypeArea.sendKeys(Keys.ENTER);
+
+			type(locator.messageTypeArea,
+					"I am an aspiring Test Automation engineer who came across a role in your firm and am interested in applying.");
+			locator.messageTypeArea.sendKeys(Keys.ENTER);
+
+			type(locator.messageTypeArea,
+					"Would you be open to sharing my profile with the hiring team so they know about my interest in this role? Happy to chat more if you have the time.Looking forward to hearing from you");
+			locator.messageTypeArea.sendKeys(Keys.ENTER);
+
+			type(locator.messageTypeArea,
+					"https://drive.google.com/file/d/10j1c1S_kmyOoezH0ruZY0hWjfGzl0uO3/view?usp=sharing");
+
+			locator.messageTypeArea.sendKeys(Keys.ENTER);
+
+			type(locator.messageTypeArea, "— Sandeep");
+
+			locator.messageTypeArea.sendKeys(Keys.ENTER);
+
 			break;
-			
+
 		}
 	}
-
+	
+	//get the name of connection
+	
+	// print the name of connection
+	
+	//check the name of connection in excel
+	
+	// if the name is present in excel then do not send email
+	
+	//if name is not present then send email
+	
+	
+	
+	public void printAllConnectionName() {
+		
+		List<WebElement> connectionNameList=locator.connectionName;
+		
+		for(WebElement element:connectionNameList) {
+			Log.info("Connections are :  "+element.getText());
+			Log.info("+++++++++++++++++++++++++++++++++++++++++++++++++");
+		}
+		
+	}
 }
