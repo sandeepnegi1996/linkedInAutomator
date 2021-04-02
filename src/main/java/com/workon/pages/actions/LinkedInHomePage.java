@@ -74,9 +74,16 @@ public class LinkedInHomePage extends Page {
 	public void sendMessageToConnection() throws InterruptedException {
 
 		List<WebElement> listMessage = locator.messageElementList;
+		Log.info("size of the messageElement :  " +listMessage.size());
 
-		for (WebElement message : listMessage) {
-
+		
+		for( int i=4;i<listMessage.size();i++) {
+			
+			Log.info("Current user:  "+i);
+			
+			WebElement message=listMessage.get(i);
+			
+			
 			click(message);
 
 			Thread.sleep(3000);
@@ -101,9 +108,50 @@ public class LinkedInHomePage extends Page {
 
 			locator.messageTypeArea.sendKeys(Keys.ENTER);
 
-			break;
+			//closing the message box once the message is send
 
+			click(locator.closeMessageButton);
+			
+			Thread.sleep(3000);
+			
 		}
+		/*
+		 * for (WebElement message : listMessage) {
+		 * 
+		 * 
+		 * click(message);
+		 * 
+		 * Thread.sleep(3000);
+		 * 
+		 * type(locator.messageTypeArea, "Hi");
+		 * locator.messageTypeArea.sendKeys(Keys.ENTER);
+		 * 
+		 * type(locator.messageTypeArea,
+		 * "I am an aspiring Test Automation engineer who came across a role in your firm and am interested in applying."
+		 * ); locator.messageTypeArea.sendKeys(Keys.ENTER);
+		 * 
+		 * type(locator.messageTypeArea,
+		 * "Would you be open to sharing my profile with the hiring team so they know about my interest in this role? Happy to chat more if you have the time.Looking forward to hearing from you"
+		 * ); locator.messageTypeArea.sendKeys(Keys.ENTER);
+		 * 
+		 * type(locator.messageTypeArea,
+		 * "https://drive.google.com/file/d/10j1c1S_kmyOoezH0ruZY0hWjfGzl0uO3/view?usp=sharing"
+		 * );
+		 * 
+		 * locator.messageTypeArea.sendKeys(Keys.ENTER);
+		 * 
+		 * type(locator.messageTypeArea, "— Sandeep");
+		 * 
+		 * locator.messageTypeArea.sendKeys(Keys.ENTER);
+		 * 
+		 * //closing the message box once the message is send
+		 * 
+		 * click(locator.closeMessageButton);
+		 * 
+		 * Thread.sleep(5000);
+		 * 
+		 * }
+		 */
 	}
 
 	// get the name of connection
@@ -146,6 +194,12 @@ public class LinkedInHomePage extends Page {
 		 */
 		
 		Log.info("size of the connectionNameList:  " +connectionNameList.size());
+		
+		
+		List<WebElement> listMessage = locator.messageElementList;
+		
+		Log.info("size of the messageElement :  " +listMessage.size());
+		
 
 	}
 }

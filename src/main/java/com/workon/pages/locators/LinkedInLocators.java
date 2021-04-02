@@ -27,5 +27,8 @@ public class LinkedInLocators {
 	
 	@FindBy(xpath="//span[@class='mn-connection-card__name t-16 t-black t-bold']")
 	public List<WebElement> connectionName;
+
+	@FindBy(xpath="//button[@class='msg-overlay-bubble-header__control artdeco-button artdeco-button--circle artdeco-button--muted artdeco-button--1 artdeco-button--tertiary ember-view']")
+	public WebElement closeMessageButton;
 }
 
