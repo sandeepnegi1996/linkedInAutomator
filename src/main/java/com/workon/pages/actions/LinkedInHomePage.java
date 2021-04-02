@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
@@ -121,14 +122,30 @@ public class LinkedInHomePage extends Page {
 
 	}
 
+	public void scrollNTimes(int times) throws InterruptedException {
+
+		while (times-- > 0) {
+
+			action.sendKeys(Keys.PAGE_DOWN).perform();
+			Thread.sleep(5000);
+
+		}
+	}
+
 	public void printAllConnectionName() {
 
-		List<WebElement> connectionNameList = locator.connectionName;
+		//List<WebElement> connectionNameList = locator.connectionName;
+	
+		
+		List<WebElement> connectionNameList=	driver.findElements(By.xpath("//span[@class='mn-connection-card__name t-16 t-black t-bold']"));
 
-		for (WebElement element : connectionNameList) {
-			Log.info("Connections are :  " + element.getText());
-			Log.info("+++++++++++++++++++++++++++++++++++++++++++++++++");
-		}
+		/*
+		 * for (WebElement element : connectionNameList) {
+		 * Log.info("Connections are :  " + element.getText());
+		 * Log.info("+++++++++++++++++++++++++++++++++++++++++++++++++"); }
+		 */
+		
+		Log.info("size of the connectionNameList:  " +connectionNameList.size());
 
 	}
 }
