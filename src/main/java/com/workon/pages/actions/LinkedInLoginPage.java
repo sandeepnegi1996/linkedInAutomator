@@ -31,7 +31,7 @@ public class LinkedInLoginPage extends Page {
 
 		click(login.getLoginBtn());
 
-		Thread.sleep(10000);
+		Thread.sleep(3000);
 
 		return new LinkedInHomePage();
 
