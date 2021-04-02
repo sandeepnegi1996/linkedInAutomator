@@ -20,5 +20,12 @@ public class LinkedInLocators {
 	//button[contains(.,'Message')]
 	@FindBy(xpath="//button[contains(.,'Message')]")
 	public List<WebElement> messageElementList;
+
+	@FindBy(xpath="//div[@aria-label='Write a message…']")
+	public WebElement messageTypeArea;
+
+	
+	@FindBy(xpath="//span[@class='mn-connection-card__name t-16 t-black t-bold']")
+	public List<WebElement> connectionName;
 }
 

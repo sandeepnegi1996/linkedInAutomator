@@ -2,7 +2,7 @@ package com.workon.testrunner;
 
 import org.testng.TestNG;
 
-import com.workon.testcases.generic.TestCase_BCDIntegrationUsers;
+
 
 public class TestRunner {
 
@@ -16,7 +16,7 @@ public class TestRunner {
 
 		testng.setTestClasses(new Class[] {
 
-				TestCase_BCDIntegrationUsers.class,
+				//TestCase_BCDIntegrationUsers.class,
 				
 				
 				/*
