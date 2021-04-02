@@ -104,27 +104,31 @@ public class LinkedInHomePage extends Page {
 
 		}
 	}
-	
-	//get the name of connection
-	
+
+	// get the name of connection
+
 	// print the name of connection
-	
-	//check the name of connection in excel
-	
+
+	// check the name of connection in excel
+
 	// if the name is present in excel then do not send email
-	
-	//if name is not present then send email
-	
-	
-	
+
+	// if name is not present then send email
+
+	public void scrollToTheBottom() {
+
+		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+
+	}
+
 	public void printAllConnectionName() {
-		
-		List<WebElement> connectionNameList=locator.connectionName;
-		
-		for(WebElement element:connectionNameList) {
-			Log.info("Connections are :  "+element.getText());
+
+		List<WebElement> connectionNameList = locator.connectionName;
+
+		for (WebElement element : connectionNameList) {
+			Log.info("Connections are :  " + element.getText());
 			Log.info("+++++++++++++++++++++++++++++++++++++++++++++++++");
 		}
-		
+
 	}
 }

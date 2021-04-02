@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,6 +41,7 @@ public class Page {
 	public static Properties prop = null;
 	public static FileInputStream input = null;
 	public static FluentWait<WebDriver> fluentwait = null;
+	public static JavascriptExecutor js=null;
 
 	public static String rootDir = System.getProperty("user.dir");
 
@@ -102,6 +104,7 @@ public class Page {
 						.pollingEvery(Duration.ofMillis(2000)).ignoring(NoSuchElementException.class);
 
 				Log.info("webdriver is created");
+				 js = (JavascriptExecutor) driver;
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
