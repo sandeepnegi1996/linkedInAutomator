@@ -40,25 +40,20 @@ public class TestCaseLinkedInAutomtatedLikes extends TestBase {
 	 * 
 	 * }
 	 */
-	
-	
+
 	@Test(dataProvider = "ntidProvider", dataProviderClass = DP.class, priority = 1)
 	public void sendMessage(String ntid) throws InterruptedException {
 
 		LinkedInLoginPage login = new LinkedInLoginPage();
 		LinkedInHomePage homepage = login.doLogin();
-		
+
 		homepage.navigateToMessagePage();
 
-	//	homepage.sendMessageToConnection();
-		
-		homepage.scrollToTheBottom();
-		Thread.sleep(5000);
-		homepage.scrollToTheBottom();
-		homepage.printAllConnectionName();
+		homepage.scrollNTimes(20);
+		Thread.sleep(3000);
 
+		homepage.printAllConnectionName();
 
 	}
 
-	
 }
