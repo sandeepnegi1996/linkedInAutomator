@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Regression_Suite">
+
+
+
+
+	<test thread-count="1" name="TestCase_SaveAsDraft">
+		<classes>
+			<class
+				name="com.workon.testcases.regression.TestCaseSaveAsDraft" />
+		</classes>
+	</test>
+
+
+	<test thread-count="1"
+		name="TestCase_PrintRequest verify bosch logo present">
+		<classes>
+			<class
+				name="com.workon.testcases.regression.TestCasePrintRequest" />
+		</classes>
+	</test>
+
+
+	<test thread-count="1" name="TestCase_CCList">
+		<classes>
+			<class name="com.workon.testcases.regression.TestCase_CCList" />
+		</classes>
+	</test>
+
+
+
+	<test thread-count="1" name="TestCase_CopyRequest">
+		<classes>
+			<class
+				name="com.workon.testcases.regression.TestCase_CopyRequest" />
+		</classes>
+	</test>
+
+	<test thread-count="1" name="TestCase_ForwardRequest">
+		<classes>
+			<class
+				name="com.workon.testcases.regression.TestCaseForwardRequest" />
+		</classes>
+	</test>
+
+
+
+</suite> 

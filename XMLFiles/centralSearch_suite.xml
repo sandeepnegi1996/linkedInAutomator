@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CentralSearch_suite">
+
+
+
+
+	<!-- Central Search -->
+<!-- 	<test thread-count="1" name="central_search">
+		<classes>
+			<class
+				name="com.workon.testcases.centralsearch.TestCase_CentralSearch" />
+			<class
+				name="com.workon.testcases.centralsearch.TestCase_CentralSearch_SearchVerify" />
+		</classes>
+	</test> -->
+
+
+</suite> 
