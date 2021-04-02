@@ -67,13 +67,32 @@ public class LinkedInHomePage extends Page {
 	}
 	
 	
-	public void navigateToMessagePage() {
+	public void navigateToMessagePage() throws InterruptedException {
 		driver.navigate().to("https://www.linkedin.com/mynetwork/invite-connect/connections/");
+		Thread.sleep(3000);
 	}
 	
-	public void sendMessageToConnection() {
+	public void sendMessageToConnection() throws InterruptedException {
 		
 		List<WebElement> listMessage= locator.messageElementList;
+		
+		for(WebElement message:listMessage) {
+			
+			click(message);
+			
+			Thread.sleep(3000);
+			
+			type(locator.messageTypeArea,"Hi,\r\n" + 
+					"\r\n" + 
+					"I am an aspiring Test Automation engineer who came across a role in your firm and am interested in applying. Would you be open to sharing my profile with the hiring team so they know about my interest in this role? Happy to chat more if you have the time. Looking forward to hearing from you.\r\n" + 
+					"\r\n" + 
+					"https://drive.google.com/file/d/10j1c1S_kmyOoezH0ruZY0hWjfGzl0uO3/view?usp=sharing\r\n" + 
+					"\r\n" + 
+					"— Sandeep");
+			
+			break;
+			
+		}
 	}
 
 }
