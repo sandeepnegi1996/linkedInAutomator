@@ -30,6 +30,14 @@ public class TestCaseLinkedInAutomtatedLikes extends TestBase {
 		LinkedInHomePage homepage = login.doLogin();
 
 		homepage.navigateToConnectPage();
+		homepage.scrollNTimes(5);
+
+		Thread.sleep(2000);
+
+		homepage.clickOnConnectButtonOneByOne();
+		homepage.scrollNTimes(5);
+
+		Thread.sleep(2000);
 
 		homepage.clickOnConnectButtonOneByOne();
 
@@ -54,20 +62,70 @@ public class TestCaseLinkedInAutomtatedLikes extends TestBase {
 
 	}
 
-	@Test(dataProvider = "ntidProvider", dataProviderClass = DP.class, priority = 3, enabled = true)
+	@Test(dataProvider = "ntidProvider", dataProviderClass = DP.class, priority = 3, enabled = false)
 	public void sendCommentOnPost(String ntid) throws InterruptedException {
 
 		LinkedInLoginPage login = new LinkedInLoginPage();
 		LinkedInHomePage homepage = login.doLogin();
 
 		homepage.scrollNTimes(5);
-		
-		Thread.sleep(2000);
-		
-		homepage.makeComment();
-		
-		
 
+		Thread.sleep(2000);
+
+		homepage.makeComment();
+
+	}
+
+	@Test(dataProvider = "ntidProvider", dataProviderClass = DP.class, priority = 4, enabled = false)
+	public void completeLinkedInAutomation(String ntid) throws InterruptedException {
+
+		LinkedInLoginPage login = new LinkedInLoginPage();
+		LinkedInHomePage homepage = login.doLogin();
+
+		homepage.scrollNTimes(5);
+
+		Thread.sleep(2000);
+
+		homepage.clickOnLikeButton();
+
+		homepage.scrollNTimes(2);
+
+		Thread.sleep(2000);
+
+		homepage.makeComment();
+
+		homepage.scrollNTimes(2);
+
+		Thread.sleep(2000);
+
+		// go to connection page
+
+		homepage.navigateToConnectPage();
+
+		homepage.clickOnConnectButtonOneByOne();
+
+		homepage.scrollNTimes(2);
+
+		Thread.sleep(2000);
+
+	}
+
+	@Test(dataProvider = "ntidProvider", dataProviderClass = DP.class, priority = 5, enabled = true)
+	public void commentInterestedInAutomationTestingProfile(String ntid) throws InterruptedException {
+
+		LinkedInLoginPage login = new LinkedInLoginPage();
+		LinkedInHomePage homepage = login.doLogin();
+
+		Thread.sleep(2000);
+
+		homepage.navigateToHashtagAutomationTestingPage();
+
+		homepage.scrollNTimes(5);
+
+		Thread.sleep(2000);
+
+		homepage.makeCommentInterested();
+		Thread.sleep(2000);
 
 	}
 

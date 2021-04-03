@@ -41,3 +41,13 @@ Pull requests are welcome.
 6. Go to home page --> scroll --> like more
  
 
+
+### Workflow for commenting *interested* in for the hastag automation testing
+1. Login
+2. Navigate to HomePage
+3. Navigate to [Link to hashtag with automationTesting](https://www.linkedin.com/feed/hashtag/automationtesting/)
+4. Scroll few times --> 4
+5. Comment in all the post with interested.
+
+
+### Create workflows like above 

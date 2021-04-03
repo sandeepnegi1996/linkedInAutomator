@@ -182,10 +182,8 @@ public class LinkedInHomePage extends Page {
 		//// button[@class='artdeco-button comment-button artdeco-button--muted
 		//// artdeco-button--4 artdeco-button--tertiary ember-view']
 
-		
-		  List<WebElement> commentButtonList = locator.commentButtonList;
-		  Log.info("size of the commentButtonList :  " + commentButtonList.size());
-		 
+		List<WebElement> commentButtonList = locator.commentButtonList;
+		Log.info("size of the commentButtonList :  " + commentButtonList.size());
 
 		// i need list of the input div add a comment
 
@@ -205,6 +203,40 @@ public class LinkedInHomePage extends Page {
 			click(commentButtonList.get(i));
 
 			type(commentButtonListInput.get(i), currentComment);
+
+			click(locator.postCommentElement);
+
+			Thread.sleep(2000);
+
+		}
+
+	}
+
+	public void navigateToHashtagAutomationTestingPage() {
+
+		driver.navigate().to("https://www.linkedin.com/feed/hashtag/automationtesting/");
+
+	}
+
+	public void makeCommentInterested() throws InterruptedException {
+
+		List<WebElement> commentButtonList = locator.commentButtonList;
+		Log.info("size of the commentButtonList :  " + commentButtonList.size());
+
+		// i need list of the input div add a comment
+
+		// commentInputField
+
+		List<WebElement> commentButtonListInput = locator.commentInputField;
+		Log.info("size of the commentButtonList :  " + commentButtonList.size());
+
+		for (int i = 0; i < commentButtonList.size(); i++) {
+
+			String commentInterested = "interested";
+
+			click(commentButtonList.get(i));
+
+			type(commentButtonListInput.get(i), commentInterested);
 
 			click(locator.postCommentElement);
 
