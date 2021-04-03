@@ -47,22 +47,20 @@ public class TestCaseLinkedInAutomtatedLikes extends TestBase {
 		LinkedInLoginPage login = new LinkedInLoginPage();
 		LinkedInHomePage homepage = login.doLogin();
 
-		homepage.clickOnLikeButton();
-		
 
-		  homepage.scrollNTimes(4);
-		  Thread.sleep(7000);
-		  homepage.clickOnLikeButton();
-		  
-		//homepage.navigateToMessagePage();
-
+		homepage.navigateToMessagePage();
 		
-		  homepage.scrollNTimes(2);
-		  Thread.sleep(7000);
-	
-		//homepage.sendMessageToConnection();
+		/*
+		 * homepage.scrollNTimes(1); Thread.sleep(3000);
+		 */
+		homepage.sendMessageToConnection();
+		
+		
+		//last message send to 45
 		
 
 	}
+	
+	
 
 }
