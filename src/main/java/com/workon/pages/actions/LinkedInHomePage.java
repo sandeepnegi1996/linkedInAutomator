@@ -5,12 +5,14 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import com.workon.base.Page;
 import com.workon.pages.locators.LinkedInLocators;
+import com.workon.utilities.comments.Comments;
 import com.workon.utilities.loggers.Log;
 
 public class LinkedInHomePage extends Page {
@@ -90,15 +92,18 @@ public class LinkedInHomePage extends Page {
 			locator.messageTypeArea.sendKeys(Keys.ENTER);
 			Thread.sleep(1000);
 
-			type(locator.messageTypeArea,"I am an aspiring Test Automation engineer who came across a role in your firm and am interested in applying.");
+			type(locator.messageTypeArea,
+					"I am an aspiring Test Automation engineer who came across a role in your firm and am interested in applying.");
 			locator.messageTypeArea.sendKeys(Keys.ENTER);
 
 			Thread.sleep(1000);
-			type(locator.messageTypeArea,"Would you be open to sharing my profile with the hiring team so they know about my interest in this role? Happy to chat more if you have the time.Looking forward to hearing from you");
+			type(locator.messageTypeArea,
+					"Would you be open to sharing my profile with the hiring team so they know about my interest in this role? Happy to chat more if you have the time.Looking forward to hearing from you");
 			locator.messageTypeArea.sendKeys(Keys.ENTER);
 
 			Thread.sleep(1000);
-			type(locator.messageTypeArea,"https://drive.google.com/file/d/10j1c1S_kmyOoezH0ruZY0hWjfGzl0uO3/view?usp=sharing");
+			type(locator.messageTypeArea,
+					"https://drive.google.com/file/d/10j1c1S_kmyOoezH0ruZY0hWjfGzl0uO3/view?usp=sharing");
 			locator.messageTypeArea.sendKeys(Keys.ENTER);
 
 			Thread.sleep(1000);
@@ -141,6 +146,16 @@ public class LinkedInHomePage extends Page {
 		}
 	}
 
+	public void scrollNTimesUp(int times) throws InterruptedException {
+
+		while (times-- > 0) {
+
+			action.sendKeys(Keys.PAGE_UP).perform();
+			Thread.sleep(5000);
+
+		}
+	}
+
 	public void printAllConnectionName() {
 
 		// List<WebElement> connectionNameList = locator.connectionName;
@@ -161,4 +176,42 @@ public class LinkedInHomePage extends Page {
 		Log.info("size of the messageElement :  " + listMessage.size());
 
 	}
+
+	public void makeComment() throws InterruptedException {
+
+		//// button[@class='artdeco-button comment-button artdeco-button--muted
+		//// artdeco-button--4 artdeco-button--tertiary ember-view']
+
+		
+		  List<WebElement> commentButtonList = locator.commentButtonList;
+		  Log.info("size of the commentButtonList :  " + commentButtonList.size());
+		 
+
+		// i need list of the input div add a comment
+
+		// commentInputField
+
+		List<WebElement> commentButtonListInput = locator.commentInputField;
+		Log.info("size of the commentButtonList :  " + commentButtonList.size());
+
+		List<String> commentListFromExcel = Comments.getComments(Page.excel);
+
+		Log.info("size of the messageElement :  " + commentListFromExcel.size());
+
+		for (int i = 0; i < commentButtonList.size(); i++) {
+
+			String currentComment = commentListFromExcel.get(i);
+
+			click(commentButtonList.get(i));
+
+			type(commentButtonListInput.get(i), currentComment);
+
+			click(locator.postCommentElement);
+
+			Thread.sleep(2000);
+
+		}
+
+	}
+
 }

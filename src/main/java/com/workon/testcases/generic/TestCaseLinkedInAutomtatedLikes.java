@@ -23,44 +23,52 @@ public class TestCaseLinkedInAutomtatedLikes extends TestBase {
 
 	}
 
-	/*
-	 * @Test(dataProvider = "ntidProvider", dataProviderClass = DP.class, priority =
-	 * 1) public void linkedInLike(String ntid) throws InterruptedException {
-	 * 
-	 * LinkedInLoginPage login = new LinkedInLoginPage(); LinkedInHomePage homepage
-	 * = login.doLogin();
-	 * 
-	 * homepage.clickOnLikeButton();
-	 * 
-	 * homepage.navigateToConnectPage();
-	 * 
-	 * homepage.clickOnConnectButtonOneByOne();
-	 * 
-	 * Thread.sleep(3000);
-	 * 
-	 * }
-	 */
+	@Test(dataProvider = "ntidProvider", dataProviderClass = DP.class, priority = 1, enabled = false)
+	public void sendConnectionRequest(String ntid) throws InterruptedException {
 
-	@Test(dataProvider = "ntidProvider", dataProviderClass = DP.class, priority = 1)
+		LinkedInLoginPage login = new LinkedInLoginPage();
+		LinkedInHomePage homepage = login.doLogin();
+
+		homepage.navigateToConnectPage();
+
+		homepage.clickOnConnectButtonOneByOne();
+
+		Thread.sleep(3000);
+
+	}
+
+	@Test(dataProvider = "ntidProvider", dataProviderClass = DP.class, priority = 2, enabled = false)
 	public void sendMessage(String ntid) throws InterruptedException {
 
 		LinkedInLoginPage login = new LinkedInLoginPage();
 		LinkedInHomePage homepage = login.doLogin();
 
-
 		homepage.navigateToMessagePage();
-		
+
 		/*
 		 * homepage.scrollNTimes(1); Thread.sleep(3000);
 		 */
 		homepage.sendMessageToConnection();
-		
-		
-		//last message send to 45
-		
+
+		// last message send to 45
 
 	}
-	
-	
+
+	@Test(dataProvider = "ntidProvider", dataProviderClass = DP.class, priority = 3, enabled = true)
+	public void sendCommentOnPost(String ntid) throws InterruptedException {
+
+		LinkedInLoginPage login = new LinkedInLoginPage();
+		LinkedInHomePage homepage = login.doLogin();
+
+		homepage.scrollNTimes(5);
+		
+		Thread.sleep(2000);
+		
+		homepage.makeComment();
+		
+		
+
+
+	}
 
 }

@@ -2,7 +2,6 @@ package com.workon.utilities.testUtil;
 
 import com.workon.base.Page;
 import com.workon.utilities.excelReader.ExcelReader;
-import com.workon.utilities.ziputils.ZipUtils;
 
 public class TestUtil extends Page {
 	
@@ -36,15 +35,7 @@ public static boolean isTestRunnable(String testName, ExcelReader excel){
 	}
 
 
-	public static void sendReport() {
-		/* EmailManager.sendEmailWithAttachment(); */
-	}
-	
-	public static void zipReport() {
-		
-		ZipUtils.zipReportFolder();
-		
-	}
+
 	
 	
 	
