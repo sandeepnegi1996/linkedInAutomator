@@ -27,5 +27,17 @@ Pull requests are welcome.
 - [x] Scrolling down
 - [x] Send a custom messgae to user done
 - [x] Create different tests and mark a test as disabled
-- [x] 
+- [x] Comment every posts in the home page
+- [x] Create a complete workflow
+
+
+#### Workflow :boom:
+
+1. Navigate to Linkedin
+2. Login
+3. Scroll
+4. Like
+5. Go to Connection --> send connection request 
+6. Go to home page --> scroll --> like more
+ 
 
