@@ -9,8 +9,23 @@ every day to engage more people on linkedin
 1. Clone the repository
 2. Make sure maven is working
 3. Make sure JDK is set in the build path inside the eclipse
-4. run the ```mvn clean```
-5. run the command ```mvn test```
+4. **Add the credentials for the linkedin in the file ** 
+
+```java
+src/main/resources/config/config.properties
+
+
+as
+
+
+testUser=userEmail
+passwordUser=userPassword
+
+
+```
+5. run the ```mvn clean```
+6. run the command ```mvn test```
+7. Just mark the testcase as *true* which ever test you wants to run
 
 
 ## Contributing
