@@ -62,7 +62,7 @@ public class TestCaseLinkedInAutomtatedLikes extends TestBase {
 
 	}
 
-	@Test(dataProvider = "ntidProvider", dataProviderClass = DP.class, priority = 3, enabled = false)
+	@Test(dataProvider = "ntidProvider", dataProviderClass = DP.class, priority = 3, enabled = true)
 	public void sendCommentOnPost(String ntid) throws InterruptedException {
 
 		LinkedInLoginPage login = new LinkedInLoginPage();
@@ -110,7 +110,7 @@ public class TestCaseLinkedInAutomtatedLikes extends TestBase {
 
 	}
 
-	@Test(dataProvider = "ntidProvider", dataProviderClass = DP.class, priority = 5, enabled = true)
+	@Test(dataProvider = "ntidProvider", dataProviderClass = DP.class, priority = 5, enabled = false)
 	public void commentInterestedInAutomationTestingProfile(String ntid) throws InterruptedException {
 
 		LinkedInLoginPage login = new LinkedInLoginPage();
