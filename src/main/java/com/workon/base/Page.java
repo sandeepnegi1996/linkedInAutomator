@@ -63,8 +63,6 @@ public class Page {
 			if (prop.getProperty("BROWSER_NAME").equals("chrome")) {
 
 				setChromeDriverPath();
-				//ChromeOptions chromeoptions = setChromeOptions();
-				//DesiredCapabilities capability=setChromeOptions();
 				driver = new ChromeDriver();
 
 			}

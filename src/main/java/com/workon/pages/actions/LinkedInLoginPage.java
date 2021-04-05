@@ -23,11 +23,9 @@ public class LinkedInLoginPage extends Page {
 
 		type(login.getUsername(), testuser);
 
-		// input[@autocomplete='username']
 
 		type(login.getPassword(), password);
 
-		//// input[@autocomplete='current-password']
 
 		click(login.getLoginBtn());
 
@@ -37,10 +35,5 @@ public class LinkedInLoginPage extends Page {
 
 	}
 
-	public String currentLoggedInUser() {
-
-		return prop.getProperty("testUser");
-
-	}
-
+	
 }
