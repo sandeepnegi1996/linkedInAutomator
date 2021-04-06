@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="All_Suites">
+<suite name="All_Suites" parallel="tests" thread-count="2">
 
 
 	<listeners>
@@ -12,16 +12,37 @@
 			class-name="com.workon.listener.AnnotationTransformer" />
 	</listeners>
 
-	<suite-files>
+
+
+<test thread-count="1" name="google tests">
+		<classes>
+			<class
+				name="com.workon.testcases.generic.TestOpeningGoogle" />
+				
+		
+		</classes>
+	</test>
+	
+	
+	
+	<test thread-count="1" name="yahoo tests">
+		<classes>
+				<class
+				name="com.workon.testcases.generic.TestOpeningYahoo" />
+		</classes>
+	</test>
+	
+	
+	<!-- <suite-files>
 
 		<suite-file path="./generic_workon_suite.xml" />
-		<!-- <suite-file path="./regression_workon_suite.xml" />
-		<suite-file path="./latestRegression_suite.xml" /> -->
-		<!-- <suite-file path="./centralSearch_suite.xml" />
+		<suite-file path="./regression_workon_suite.xml" />
+		<suite-file path="./latestRegression_suite.xml" />
+		<suite-file path="./centralSearch_suite.xml" />
 		<suite-file path="./Generic_WorkON_Dashboard.xml" />
- -->
 
-	</suite-files>
+
+	</suite-files> -->
 
 
 </suite>

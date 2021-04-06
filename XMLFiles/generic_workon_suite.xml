@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Generic_Suite">
+<suite name="Generic_Suite" parallel="classes" thread-count="2">
 
 
-<test thread-count="1" name="linkedin automated likes">
+<!-- <test thread-count="1" name="linkedin automated likes">
 		<classes>
 			<class
 				name="com.workon.testcases.generic.TestCaseLinkedInAutomtatedLikes" />
+		</classes>
+	</test> -->
+	
+	
+	
+	
+	<test thread-count="1" name="linkedin automated likes">
+		<classes>
+			<class
+				name="com.workon.testcases.generic.TestOpeningGoogle" />
+				
+				<class
+				name="com.workon.testcases.generic.TestOpeningYahoo" />
 		</classes>
 	</test>
 	
