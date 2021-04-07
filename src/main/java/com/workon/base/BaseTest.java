@@ -11,7 +11,6 @@ public class BaseTest {
 
 	@BeforeClass
 	protected void setUpBeforeTestClass() {
-		// initialize a browser driver, connect to servers
 		String firefoxdriverpath = System.getProperty("user.dir")
 				+ "\\src\\test\\resources\\executable\\geckodriver.exe";
 
